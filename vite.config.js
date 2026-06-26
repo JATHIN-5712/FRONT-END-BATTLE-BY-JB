@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/FRONT-END-BATTLE-BY-JB/',
+  base: process.env.VERCEL || process.env.VERCEL_ENV ? '/' : '/FRONT-END-BATTLE-BY-JB/',
 })
