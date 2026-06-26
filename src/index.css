@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-arctic-powder: #F1F6F4;
+  --color-mystic-mint: #D9E8E2;
+  --color-forsythia: #FFC801;
+  --color-deep-saffron: #FF9932;
+  --color-nocturnal: #114C5A;
+  --color-oceanic: #172B36;
+  
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #172B36;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #172B36;
+}
+::-webkit-scrollbar-thumb {
+  background: #114C5A;
+  border-radius: 4px;
+  border: 2px solid #172B36;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FFC801;
+}
+
+/* Custom Grid Pattern Background */
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(217, 232, 226, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(217, 232, 226, 0.04) 1px, transparent 1px);
+}
+
+/* Glowing Animations */
+@keyframes scanning {
+  0%, 100% {
+    transform: translateY(-25px);
+  }
+  50% {
+    transform: translateY(25px);
+  }
+}
+
+#scanner-line {
+  animation: scanning 5s ease-in-out infinite;
+}
+
+/* Smooth transitions */
+.mobile-accordion-content, .faq-content {
+  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom glow utility */
+.bento-card:hover .bento-glow {
+  opacity: 1;
+}
+
+/* Cosmic wave gradient shifting animation */
+@keyframes cosmicWave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.active-cosmic-wave {
+  background: linear-gradient(270deg, #FF9932, #FFC801, #114C5A);
+  background-size: 600% 600%;
+  animation: cosmicWave 8s ease infinite;
+  color: #F1F6F4 !important;
+  border-color: transparent !important;
+}
